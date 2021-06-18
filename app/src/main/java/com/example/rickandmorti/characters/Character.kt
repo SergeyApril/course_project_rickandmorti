@@ -2,7 +2,7 @@ package com.example.rickandmorti.characters
 
 import com.google.gson.annotations.SerializedName
 
-class Character(
+data class Character(
         @SerializedName("id")  var idCharacter: Int,
         @SerializedName("name") var nameCharacter: String,
         @SerializedName("status") var statusCharacter: String,

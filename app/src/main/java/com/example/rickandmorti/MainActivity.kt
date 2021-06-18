@@ -1,28 +1,21 @@
 package com.example.rickandmorti
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
-import com.example.rickandmorti.adapters.CharactersAdapter
+import com.example.rickandmorti.adapters.CharactersPagesAdapter
 import com.example.rickandmorti.characters.AllDataFromApi
-import com.example.rickandmorti.characters.Character
-import com.example.rickandmorti.fragments.AllCharactersFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.google.gson.Gson
-import java.util.*
-import kotlin.collections.ArrayList
 
-class MainActivity : AppCompatActivity(),CharactersAdapter.OnButtonListener {
+class MainActivity : AppCompatActivity(),CharactersPagesAdapter.OnButtonListener {
     lateinit var tabLayout: TabLayout
     lateinit var pager2 : ViewPager2
     lateinit var rmFragmentAdapter : RMFragmentAdapter
     lateinit var gsonParse : AllDataFromApi
     companion object {
-        var adapterCharacter = CharactersAdapter()
+        var adapterCharacter = CharactersPagesAdapter()
     }
     fun testLoadData(){
         gsonParse = GsonParse().getResult(DataTestClass.dataTest)
@@ -63,5 +56,4 @@ class MainActivity : AppCompatActivity(),CharactersAdapter.OnButtonListener {
         })
     testLoadData()
     }
-
 }
